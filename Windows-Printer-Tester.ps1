@@ -1,7 +1,7 @@
 ﻿echo "***********************************************"
-echo "***      Windows Printer Tester			  ***"
-echo "***                                         ***"
-echo "***********************************************"
+echo "***      Windows Printer Tester	           ***"
+echo "***                                          ***"
+echo "************************************************"
 
 #Declaring ping object
 $ping = new-object system.Net.NetworkInformation.Ping
@@ -29,8 +29,8 @@ Foreach ($server in $printer_servers)
 
 		if ($item.Contains("Print"))
 			{	
-			    #split the string in order to take the first element and attach the domain
-            	$k =  $item.Split(" ")[0] + "." + $domain
+			    	#split the string in order to take the first element and attach the domain
+            	        	$k =  $item.Split(" ")[0] + "." + $domain
 			
 			try 
           		 { 
@@ -40,20 +40,20 @@ Foreach ($server in $printer_servers)
 					   {
 						 #only print if the ping is ok
 						  echo  $k  " OK" 
-						            }
+						          		  }
        	    		else 
 				 		{
-				    	 $k = $k + "," + "Error" + "," + $server
+				    		 $k = $k + "," + "Error" + "," + $server
 						 echo $k >> "ExportedPrinters.txt"
 						 echo  $k
-				  										}   
+				  								}   
 										
-													        }
-       	 catch 
+											  }
+       			 catch 
 				 {
 			          #the exception could be generated if the hostname is wrong
 					  $k = $k + "," + "Exception(check the hostname)" + "," + $server 
-				      echo $k >> "ExportedPrinters.txt" 
+				     	  echo $k >> "ExportedPrinters.txt" 
 					  echo  $k
 					   				} 
 	 
