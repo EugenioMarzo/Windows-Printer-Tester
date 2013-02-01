@@ -1,4 +1,4 @@
-Share-Ping-Sequencer
+Windows-Printer-Tester
 ====================
 
-Ping sequncer for windows.. You can test the ping to any objects shared from N servers in your domain
+Testing with the ping any printers shared from N Servers in your domain
